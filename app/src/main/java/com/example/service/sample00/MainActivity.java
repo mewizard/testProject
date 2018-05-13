@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         emit0();
-        emit1();
+//        emit1();
 
         Logger.i("beta_02 save 7");
     }
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+/*
     private void emit1() {
         Disposable disposable = Observable.just("RED", "GREEN", "YELLOW")
                 .subscribe(
@@ -72,5 +73,6 @@ public class MainActivity extends AppCompatActivity {
             disposable.dispose();
         }
     }
+*/
 
 }
