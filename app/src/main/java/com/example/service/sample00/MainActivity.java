@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         emit0();
         emit1();
 
-        Logger.i("master");
+        Logger.i("master push 1");
     }
 
     /**
