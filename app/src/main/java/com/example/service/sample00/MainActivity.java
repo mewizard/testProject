@@ -22,55 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        emit0();
-        emit1();
-
         Logger.i("master push 1");
-    }
-
-    /**
-     * 데이터를 그대로 출력.
-     */
-    private void emit0() {
-        Observable.just("Hello", "RxJava 2!!")
-                .subscribe(new Observer<String>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        Logger.i("subscribe");
-                    }
-
-                    @Override
-                    public void onNext(String s) {
-                        Logger.i(s);
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Logger.i(e.getMessage());
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        Logger.i("complete");
-                    }
-                });
-    }
-
-    private void emit1() {
-        Disposable disposable = Observable.just("RED", "GREEN", "YELLOW")
-                .subscribe(
-                        onNext -> Logger.i(onNext),
-                        onError -> {
-                            onError.printStackTrace();
-                            Logger.e(onError.getMessage());
-                        },
-                        () -> Logger.i("complete"));
-
-        Logger.i("disposable.isDisposed(): %s", disposable.isDisposed());
-
-        if (!disposable.isDisposed()) {
-            disposable.dispose();
-        }
     }
 
 }
